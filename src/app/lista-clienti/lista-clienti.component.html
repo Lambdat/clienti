@@ -1,0 +1,29 @@
+<h1>Elenco Clienti presenti in archivio</h1>
+
+<table class="w3-table-all">
+    <tr class="w3-green">
+        <th>Indice</th>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Email</th>
+        <th>Indirizzo</th>
+        <th>Citta</th>
+        <th>Provincia</th>
+        <th>CAP</th>
+    </tr>
+
+    <tr *ngFor="let c of clienti; let indice=index">
+        <td class="w3-green">{{indice}}</td>
+        <td #idRef>{{c.id}}</td>
+        <td>{{c.nome}}</td>
+        <td>{{c.cognome}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.indirizzo}}</td>
+        <td>{{c.citta}}</td>
+        <td>{{c.provincia}}</td>
+        <td>{{c.cap}}</td>
+        <td><input type="button" value="Elimina" (click)="elimina(idRef.innerText)"></td>
+    </tr>
+
+</table>

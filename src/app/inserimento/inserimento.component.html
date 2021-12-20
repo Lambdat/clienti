@@ -1,0 +1,89 @@
+<div>
+        <input type="button" value="Inserisci" (click)="inserisci($event)">
+</div>
+
+<div>
+
+    <h1>Inserimento Nuovo Cliente</h1>
+
+    <form [formGroup]="clienteForm">
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <td>
+                    <input type="number" readonly formControlName="id">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Nome</th>
+                <td>
+                    <input type="text" formControlName="nome">
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>Cognome</th>
+                <td>
+                    <input type="text" formControlName="cognome">
+                </td>
+
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    <input type="text" formControlName="email">
+                </td>
+
+            </tr>
+            <tr>
+                <th>Indirizzo</th>
+                <td>
+                    <input type="text" formControlName="indirizzo">
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>Citta</th>
+                <td>
+                    <input type="text" formControlName="citta">
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>Provincia</th>
+                <td>
+                    <input type="text" formControlName="provincia" maxlength="2">
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>Cap</th>
+                <td>
+                    <input type="number" formControlName="cap">
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <input colspan="2" type="button" value="Inserisci" (click)="inserisci($event)" [disabled]="!clienteForm.valid">
+                    <input  colspan="2" type="button" value="Pulisci" (click)="pulisci($event)">
+                </td>
+            </tr>
+ 
+            
+        </table>
+
+    </form>
+
+    <div>{{messaggio}}</div>
+    <div>clienteForm.valid: {{clienteForm.valid}}</div>
+
+
+</div>
